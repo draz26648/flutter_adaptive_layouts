@@ -1,6 +1,6 @@
 name: screenwise
 description: "A Flutter package providing responsive widgets that automatically adapt to different screen sizes without manual if/else statements."
-version: 0.0.3
+version: 0.0.4
 homepage: https://github.com/draz26648/flutter_adaptive_layouts
 repository: https://github.com/draz26648/flutter_adaptive_layouts
 issue_tracker: https://github.com/draz26648/flutter_adaptive_layouts/issues
