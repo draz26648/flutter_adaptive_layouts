@@ -1,6 +1,6 @@
 # Flutter Adaptive Layouts
 
-A Flutter package providing responsive widgets that automatically adapt to different screen sizes without manual if/else statements.
+A Flutter package providing responsive widgets that automatically adapt to different screen sizes without manual if/else statements. This package is specifically designed to make your Flutter applications look great on both mobile and web platforms without writing platform-specific code.
 
 ## Features
 
@@ -27,6 +27,22 @@ Then run:
 ```bash
 flutter pub get
 ```
+
+## Web and Mobile Integration
+
+This package is designed to work seamlessly across both web and mobile platforms. Here's how to optimize your app for both platforms:
+
+### Understanding Screen Breakpoints
+
+The package uses the following default breakpoints to determine the screen size:
+
+- **Mobile**: < 600px
+- **Tablet**: 600px - 900px
+- **Desktop**: 900px - 1200px
+- **Large Desktop**: 1200px - 1800px
+- **Extra Large Desktop**: > 1800px
+
+You can customize these breakpoints to match your specific design requirements (see [Customizing Breakpoints](#customizing-breakpoints) section).
 
 ## Usage
 
@@ -160,6 +176,120 @@ final fontSize = context.responsiveDouble(
 );
 ```
 
+## Web-Specific Considerations
+
+When developing for the web, consider the following:
+
+### 1. Drawer vs Navigation Rail
+
+The `ResponsiveScaffold` widget automatically switches between a drawer (on mobile) and a navigation rail (on desktop) based on screen width:
+
+```dart
+ResponsiveScaffold(
+  appBar: AppBar(title: Text('My App')),
+  drawer: YourDrawerWidget(), // Used on mobile/tablet
+  navigationRail: NavigationRail( // Used on desktop
+    selectedIndex: _selectedIndex,
+    onDestinationSelected: (int index) {
+      setState(() {
+        _selectedIndex = index;
+      });
+    },
+    destinations: [
+      NavigationRailDestination(
+        icon: Icon(Icons.home),
+        label: Text('Home'),
+      ),
+      // Add more destinations
+    ],
+  ),
+  body: _pages[_selectedIndex],
+)
+```
+
+### 2. Content Width Management
+
+Use `ResponsiveContainer` to ensure content doesn't stretch too wide on large screens:
+
+```dart
+ResponsiveContainer(
+  mobileWidthFraction: 1.0,    // Full width on mobile
+  tabletWidthFraction: 0.8,    // 80% width on tablet
+  desktopWidthFraction: 0.7,   // 70% width on desktop
+  desktopMaxWidth: 1200,       // Never wider than 1200px
+  child: YourContent(),
+)
+```
+
+### 3. Different Layouts for Web and Mobile
+
+Use `ResponsiveBuilder` to create completely different layouts:
+
+```dart
+ResponsiveBuilder(
+  mobileBuilder: (context) => MobileLayout(),
+  desktopBuilder: (context) => WebLayout(),
+)
+```
+
+## Mobile-Specific Considerations
+
+### 1. Stacking Elements
+
+Use `AdaptiveColumn` to automatically switch between column and row layouts:
+
+```dart
+AdaptiveColumn(
+  children: [
+    UserProfileWidget(),
+    UserStatsWidget(),
+  ],
+  // On mobile: stacked vertically
+  // On desktop: arranged horizontally
+  convertToRowOnDesktop: true,
+)
+```
+
+### 2. Grid Layouts
+
+Adjust the number of columns based on screen size:
+
+```dart
+ResponsiveGrid(
+  mobileColumns: 1,       // Single column on mobile
+  tabletColumns: 2,       // Two columns on tablet
+  desktopColumns: 4,      // Four columns on desktop
+  children: [
+    // Your grid items
+  ],
+)
+```
+
+### 3. Text Scaling
+
+Adjust text size based on device:
+
+```dart
+ResponsiveText(
+  'Your text here',
+  mobileStyle: TextStyle(fontSize: 14),
+  tabletStyle: TextStyle(fontSize: 16),
+  desktopStyle: TextStyle(fontSize: 18),
+)
+```
+
+## Handling Orientation Changes
+
+The package automatically responds to orientation changes. You can also check the current orientation using:
+
+```dart
+if (ScreenSizeUtils.isPortrait(context)) {
+  // Portrait-specific logic
+} else {
+  // Landscape-specific logic
+}
+```
+
 ## Customizing Breakpoints
 
 You can customize the default breakpoints using ResponsiveConfig:
@@ -169,16 +299,57 @@ void main() {
   // Set custom configuration
   ResponsiveConfig.setConfig(
     ResponsiveConfig(
-      mobileBreakpoint: 480.0,
-      tabletBreakpoint: 800.0,
-      desktopBreakpoint: 1200.0,
-      largeDesktopBreakpoint: 1600.0,
+      mobileBreakpoint: 480.0,      // Custom mobile breakpoint
+      tabletBreakpoint: 800.0,      // Custom tablet breakpoint
+      desktopBreakpoint: 1200.0,    // Custom desktop breakpoint
+      largeDesktopBreakpoint: 1600.0, // Custom large desktop breakpoint
     ),
   );
   
   runApp(MyApp());
 }
 ```
+
+## Responsive Values for Any Property
+
+Use the `ResponsiveValue` class to create responsive values for any property:
+
+```dart
+// Responsive padding
+final padding = ResponsiveValue<EdgeInsets>(
+  mobile: EdgeInsets.all(8),
+  tablet: EdgeInsets.all(16),
+  desktop: EdgeInsets.all(24),
+).get(context);
+
+// Responsive boolean flags
+final showFeature = ResponsiveValue<bool>(
+  mobile: false,  // Hide on mobile
+  desktop: true,  // Show on desktop
+).get(context);
+```
+
+Or use the convenient extension methods:
+
+```dart
+final fontSize = context.responsiveDouble(
+  14.0,  // Mobile
+  tablet: 16.0,  // Tablet
+  desktop: 18.0,  // Desktop
+);
+```
+
+## Best Practices
+
+1. **Start Mobile-First**: Design for mobile first, then expand for larger screens.
+
+2. **Test on Multiple Devices**: Always test your responsive layouts on various screen sizes.
+
+3. **Use Breakpoints Consistently**: Stick to the same breakpoints throughout your app.
+
+4. **Combine with MediaQuery**: For advanced cases, you can still use MediaQuery alongside this package.
+
+5. **Consider Content Priority**: On smaller screens, focus on the most important content.
 
 ## Complete Example
 
