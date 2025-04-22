@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_adaptive_layouts/flutter_adaptive_layouts.dart';
+import 'package:screenwise/screenwise.dart';
 
 void main() {
   runApp(const MyApp());

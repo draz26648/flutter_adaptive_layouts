@@ -1,4 +1,4 @@
-# Flutter Adaptive Layouts
+# ScreenWise
 
 A Flutter package providing responsive widgets that automatically adapt to different screen sizes without manual if/else statements. This package is specifically designed to make your Flutter applications look great on both mobile and web platforms without writing platform-specific code.
 
@@ -19,7 +19,7 @@ Add the package to your pubspec.yaml file:
 
 ```yaml
 dependencies:
-  flutter_adaptive_layouts: ^0.0.1
+  screenwise: ^0.0.1
 ```
 
 Then run:

@@ -1,4 +1,4 @@
-library flutter_adaptive_layouts;
+library screenwise;
 
 // Export utilities
 export 'src/utils/screen_size_utils.dart';
