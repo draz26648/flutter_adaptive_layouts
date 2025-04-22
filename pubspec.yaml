@@ -1,7 +1,13 @@
 name: flutter_adaptive_layouts
 description: "A Flutter package providing responsive widgets that automatically adapt to different screen sizes without manual if/else statements."
 version: 0.0.1
-homepage:
+homepage: https://github.com/draz26648/flutter_adaptive_layouts
+repository: https://github.com/draz26648/flutter_adaptive_layouts
+issue_tracker: https://github.com/draz26648/flutter_adaptive_layouts/issues
+documentation: https://github.com/draz26648/flutter_adaptive_layouts/blob/main/README.md
+
+
+publish_to: https://pub.dev/
 
 environment:
   sdk: ^3.7.2

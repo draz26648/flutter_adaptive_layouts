@@ -358,3 +358,11 @@ For a complete example, please refer to the `/example` folder in the package.
 ## Contributing
 
 Contributions are welcome! If you'd like to contribute, please create a pull request or open an issue on GitHub.
+
+## Authors
+
+- **Mohamed Draz** - *Initial work* - [draz26648](https://github.com/draz26648)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
