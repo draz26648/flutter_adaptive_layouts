@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Responsive Widget Toolkit Demo',
+      title: 'ScreenWise Demo',
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
@@ -28,7 +28,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return ResponsiveScaffold(
       appBar: AppBar(
-        title: const Text('Responsive Widget Toolkit Demo'),
+        title: const Text('ScreenWise Demo'),
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,
       ),
       drawer: Drawer(
@@ -40,7 +40,7 @@ class MyHomePage extends StatelessWidget {
                 color: Colors.deepPurple,
               ),
               child: Text(
-                'القائمة',
+                'Menu',
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -48,13 +48,13 @@ class MyHomePage extends StatelessWidget {
               ),
             ),
             ListTile(
-              title: const Text('الصفحة الرئيسية'),
+              title: const Text('Home Page'),
               onTap: () {
                 Navigator.pop(context);
               },
             ),
             ListTile(
-              title: const Text('الإعدادات'),
+              title: const Text('Settings'),
               onTap: () {
                 Navigator.pop(context);
               },
@@ -67,11 +67,11 @@ class MyHomePage extends StatelessWidget {
         destinations: const [
           NavigationRailDestination(
             icon: Icon(Icons.home),
-            label: Text('الرئيسية'),
+            label: Text('Home'),
           ),
           NavigationRailDestination(
             icon: Icon(Icons.settings),
-            label: Text('الإعدادات'),
+            label: Text('Settings'),
           ),
         ],
         onDestinationSelected: (int index) {},
@@ -80,11 +80,11 @@ class MyHomePage extends StatelessWidget {
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: 'الرئيسية',
+            label: 'Home',
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
-            label: 'الإعدادات',
+            label: 'Settings',
           ),
         ],
         currentIndex: 0,
@@ -98,7 +98,7 @@ class MyHomePage extends StatelessWidget {
             children: [
               // Responsive Text Example
               const ResponsiveText(
-                'مرحبًا بك في مكتبة Responsive Widget Toolkit!',
+                'Welcome to ScreenWise!',
                 mobileStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                 tabletStyle: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
                 desktopStyle: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
@@ -106,7 +106,7 @@ class MyHomePage extends StatelessWidget {
               const SizedBox(height: 24),
               
               // Responsive Container Example
-              const Text('ResponsiveContainer مثال على', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text('ResponsiveContainer Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               ResponsiveContainer(
                 mobileWidthFraction: 1.0,
@@ -118,14 +118,14 @@ class MyHomePage extends StatelessWidget {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Text(
-                  'هذا الحاوية ستتكيف مع حجم الشاشة. على الهاتف المحمول، ستأخذ 100% من العرض. على الجهاز اللوحي، ستأخذ 80%. على سطح المكتب، ستأخذ 60%.',
+                  'This container will adapt to the screen size. On mobile, it will take 100% of the width. On tablet, it will take 80%. On desktop, it will take 60%.',
                   style: TextStyle(fontSize: 16),
                 ),
               ),
               const SizedBox(height: 24),
               
               // Responsive Row Example
-              const Text('ResponsiveRow مثال على', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text('ResponsiveRow Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               ResponsiveRow(
                 mobileItemCount: 1,
@@ -133,16 +133,16 @@ class MyHomePage extends StatelessWidget {
                 desktopItemCount: 4,
                 spacing: 16,
                 children: [
-                  _buildColoredBox(Colors.red, 'عنصر 1'),
-                  _buildColoredBox(Colors.blue, 'عنصر 2'),
-                  _buildColoredBox(Colors.green, 'عنصر 3'),
-                  _buildColoredBox(Colors.amber, 'عنصر 4'),
+                  _buildColoredBox(Colors.red, 'Item 1'),
+                  _buildColoredBox(Colors.blue, 'Item 2'),
+                  _buildColoredBox(Colors.green, 'Item 3'),
+                  _buildColoredBox(Colors.amber, 'Item 4'),
                 ],
               ),
               const SizedBox(height: 24),
               
               // Responsive Grid Example
-              const Text('ResponsiveGrid مثال على', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text('ResponsiveGrid Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               ResponsiveGrid(
                 mobileColumns: 1,
@@ -153,75 +153,75 @@ class MyHomePage extends StatelessWidget {
                 mainAxisSpacing: 16,
                 childAspectRatio: 1.5,
                 children: [
-                  _buildColoredBox(Colors.purple, 'عنصر 1'),
-                  _buildColoredBox(Colors.teal, 'عنصر 2'),
-                  _buildColoredBox(Colors.orange, 'عنصر 3'),
-                  _buildColoredBox(Colors.pink, 'عنصر 4'),
-                  _buildColoredBox(Colors.indigo, 'عنصر 5'),
-                  _buildColoredBox(Colors.lime, 'عنصر 6'),
+                  _buildColoredBox(Colors.purple, 'Item 1'),
+                  _buildColoredBox(Colors.teal, 'Item 2'),
+                  _buildColoredBox(Colors.orange, 'Item 3'),
+                  _buildColoredBox(Colors.pink, 'Item 4'),
+                  _buildColoredBox(Colors.indigo, 'Item 5'),
+                  _buildColoredBox(Colors.lime, 'Item 6'),
                 ],
               ),
               const SizedBox(height: 24),
               
               // Adaptive Column Example
-              const Text('AdaptiveColumn مثال على', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text('AdaptiveColumn Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               AdaptiveColumn(
                 spacing: 16,
                 convertToRowOnDesktop: true,
                 children: [
-                  _buildColoredBox(Colors.deepOrange, 'عنصر 1', height: 100),
-                  _buildColoredBox(Colors.deepPurple, 'عنصر 2', height: 100),
+                  _buildColoredBox(Colors.deepOrange, 'Item 1', height: 100),
+                  _buildColoredBox(Colors.deepPurple, 'Item 2', height: 100),
                 ],
               ),
               const SizedBox(height: 24),
               
               // Responsive Builder Example
-              const Text('ResponsiveBuilder مثال على', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text('ResponsiveBuilder Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               ResponsiveBuilder(
                 mobileBuilder: (context) => _buildColoredBox(
                   Colors.red.shade300, 
-                  'عرض الهاتف المحمول',
+                  'Mobile View',
                   height: 100,
                 ),
                 tabletBuilder: (context) => _buildColoredBox(
                   Colors.green.shade300, 
-                  'عرض الجهاز اللوحي',
+                  'Tablet View',
                   height: 100,
                 ),
                 desktopBuilder: (context) => _buildColoredBox(
                   Colors.blue.shade300, 
-                  'عرض سطح المكتب',
+                  'Desktop View',
                   height: 100,
                 ),
               ),
               const SizedBox(height: 24),
               
               // Responsive Widget Example
-              const Text('ResponsiveWidget مثال على', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text('ResponsiveWidget Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               ResponsiveWidget(
                 mobile: _buildColoredBox(
                   Colors.red.shade700, 
-                  'عرض الهاتف المحمول',
+                  'Mobile View',
                   height: 100,
                 ),
                 tablet: _buildColoredBox(
                   Colors.green.shade700, 
-                  'عرض الجهاز اللوحي',
+                  'Tablet View',
                   height: 100,
                 ),
                 desktop: _buildColoredBox(
                   Colors.blue.shade700, 
-                  'عرض سطح المكتب',
+                  'Desktop View',
                   height: 100,
                 ),
               ),
               const SizedBox(height: 24),
               
               // Screen Size Info
-              const Text('معلومات حجم الشاشة الحالي:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text('Current Screen Size Information:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
               const SizedBox(height: 8),
               Builder(
                 builder: (context) {
@@ -239,10 +239,10 @@ class MyHomePage extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text('نوع الشاشة: $screenType'),
-                        Text('العرض: ${width.toStringAsFixed(1)}'),
-                        Text('الارتفاع: ${height.toStringAsFixed(1)}'),
-                        Text('الاتجاه: $orientation'),
+                        Text('Screen Type: $screenType'),
+                        Text('Width: ${width.toStringAsFixed(1)}'),
+                        Text('Height: ${height.toStringAsFixed(1)}'),
+                        Text('Orientation: $orientation'),
                       ],
                     ),
                   );

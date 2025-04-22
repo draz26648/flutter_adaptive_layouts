@@ -19,7 +19,7 @@ Add the package to your pubspec.yaml file:
 
 ```yaml
 dependencies:
-  screenwise: ^0.0.1
+  screenwise: ^0.0.2
 ```
 
 Then run:
