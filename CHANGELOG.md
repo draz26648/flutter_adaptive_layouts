@@ -1,3 +1,10 @@
+## 0.0.3
+
+* Improved documentation
+* Added ResponsiveValue for any property
+* Added ResponsiveWidget for a simpler way to use ResponsiveValue
+* Followed Dart code style guidelines
+
 ## 0.0.2
 
 * Improved documentation
