@@ -51,10 +51,10 @@ class ResponsiveRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = ScreenSizeUtils.getScreenSizeType(context);
-    
+
     // Determine how many items to show based on screen size
     int itemCount = children.length;
-    
+
     switch (screenType) {
       case ScreenSizeType.mobile:
         itemCount = mobileItemCount ?? children.length;
@@ -68,10 +68,10 @@ class ResponsiveRow extends StatelessWidget {
         itemCount = desktopItemCount ?? children.length;
         break;
     }
-    
+
     // Limit the number of items to show
     final visibleChildren = children.take(itemCount).toList();
-    
+
     // Create the row or wrap based on the wrap parameter
     if (wrap) {
       return Wrap(
@@ -79,7 +79,9 @@ class ResponsiveRow extends StatelessWidget {
         runSpacing: runSpacing,
         direction: Axis.horizontal,
         alignment: _convertMainAxisToWrapAlignment(mainAxisAlignment),
-        crossAxisAlignment: _convertCrossAxisToWrapCrossAlignment(crossAxisAlignment),
+        crossAxisAlignment: _convertCrossAxisToWrapCrossAlignment(
+          crossAxisAlignment,
+        ),
         children: reverse ? visibleChildren.reversed.toList() : visibleChildren,
       );
     } else {
@@ -98,7 +100,7 @@ class ResponsiveRow extends StatelessWidget {
   List<Widget> _addSpacingBetweenItems(List<Widget> items, double spacing) {
     if (items.isEmpty) return [];
     if (items.length == 1) return items;
-    
+
     final result = <Widget>[];
     for (int i = 0; i < items.length; i++) {
       result.add(items[i]);
@@ -128,7 +130,9 @@ class ResponsiveRow extends StatelessWidget {
   }
 
   // Convert CrossAxisAlignment to WrapCrossAlignment
-  WrapCrossAlignment _convertCrossAxisToWrapCrossAlignment(CrossAxisAlignment alignment) {
+  WrapCrossAlignment _convertCrossAxisToWrapCrossAlignment(
+    CrossAxisAlignment alignment,
+  ) {
     switch (alignment) {
       case CrossAxisAlignment.start:
         return WrapCrossAlignment.start;

@@ -2,13 +2,13 @@
 class ResponsiveConfig {
   /// Default breakpoint for mobile screens
   final double mobileBreakpoint;
-  
+
   /// Default breakpoint for tablet screens
   final double tabletBreakpoint;
-  
+
   /// Default breakpoint for desktop screens
   final double desktopBreakpoint;
-  
+
   /// Default breakpoint for large desktop screens
   final double largeDesktopBreakpoint;
 

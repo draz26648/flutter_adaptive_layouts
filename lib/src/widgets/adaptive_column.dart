@@ -51,7 +51,7 @@ class AdaptiveColumn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDesktop = ScreenSizeUtils.isDesktop(context);
-    
+
     // If we're on desktop and should convert to a row
     if (isDesktop && convertToRowOnDesktop) {
       return Row(
@@ -80,15 +80,21 @@ class AdaptiveColumn extends StatelessWidget {
   }
 
   // Helper method to add spacing between items
-  List<Widget> _addSpacingBetweenItems(List<Widget> items, double spacing, {required bool isRow}) {
+  List<Widget> _addSpacingBetweenItems(
+    List<Widget> items,
+    double spacing, {
+    required bool isRow,
+  }) {
     if (items.isEmpty) return [];
     if (items.length == 1) return items;
-    
+
     final result = <Widget>[];
     for (int i = 0; i < items.length; i++) {
       result.add(items[i]);
       if (i < items.length - 1) {
-        result.add(isRow ? SizedBox(width: spacing) : SizedBox(height: spacing));
+        result.add(
+          isRow ? SizedBox(width: spacing) : SizedBox(height: spacing),
+        );
       }
     }
     return result;

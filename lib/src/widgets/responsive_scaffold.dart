@@ -55,17 +55,14 @@ class ResponsiveScaffold extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDesktop = ScreenSizeUtils.isDesktop(context);
-    
+
     // If we're on desktop and have a navigation rail
     if (isDesktop && navigationRail != null && !showDrawerOnDesktop) {
       return Scaffold(
         appBar: appBar,
         body: Row(
           children: [
-            SizedBox(
-              width: navigationRailWidth,
-              child: navigationRail!,
-            ),
+            SizedBox(width: navigationRailWidth, child: navigationRail!),
             Expanded(child: body),
           ],
         ),

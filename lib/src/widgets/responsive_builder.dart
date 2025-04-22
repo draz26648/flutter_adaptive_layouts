@@ -27,7 +27,7 @@ class ResponsiveBuilder extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = ScreenSizeUtils.getScreenSizeType(context);
-    
+
     switch (screenType) {
       case ScreenSizeType.mobile:
         return mobileBuilder(context);
@@ -37,7 +37,10 @@ class ResponsiveBuilder extends StatelessWidget {
         return (desktopBuilder ?? tabletBuilder ?? mobileBuilder)(context);
       case ScreenSizeType.largeDesktop:
       case ScreenSizeType.extraLargeDesktop:
-        return (largeDesktopBuilder ?? desktopBuilder ?? tabletBuilder ?? mobileBuilder)(context);
+        return (largeDesktopBuilder ??
+            desktopBuilder ??
+            tabletBuilder ??
+            mobileBuilder)(context);
     }
   }
 }

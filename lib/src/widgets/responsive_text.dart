@@ -51,7 +51,7 @@ class ResponsiveText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = ScreenSizeUtils.getScreenSizeType(context);
-    
+
     // Determine text style based on screen size
     TextStyle? style;
     switch (screenType) {
@@ -69,7 +69,7 @@ class ResponsiveText extends StatelessWidget {
         style = largeDesktopStyle ?? desktopStyle ?? tabletStyle ?? mobileStyle;
         break;
     }
-    
+
     return Text(
       text,
       style: style,
@@ -77,9 +77,8 @@ class ResponsiveText extends StatelessWidget {
       overflow: overflow,
       maxLines: maxLines,
       softWrap: softWrap,
-      textScaler: textScaleFactor != null 
-          ? TextScaler.linear(textScaleFactor!) 
-          : null,
+      textScaler:
+          textScaleFactor != null ? TextScaler.linear(textScaleFactor!) : null,
     );
   }
 }

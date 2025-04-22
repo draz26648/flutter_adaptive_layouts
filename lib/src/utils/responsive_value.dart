@@ -26,7 +26,7 @@ class ResponsiveValue<T> {
   /// Get the value based on the current screen size
   T get(BuildContext context) {
     final screenType = ScreenSizeUtils.getScreenSizeType(context);
-    
+
     switch (screenType) {
       case ScreenSizeType.mobile:
         return mobile;

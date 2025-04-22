@@ -55,7 +55,7 @@ class ResponsiveGrid extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = ScreenSizeUtils.getScreenSizeType(context);
-    
+
     // Determine number of columns based on screen size
     int crossAxisCount;
     switch (screenType) {
@@ -173,7 +173,7 @@ class ResponsiveGridView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final screenType = ScreenSizeUtils.getScreenSizeType(context);
-    
+
     // Determine number of columns based on screen size
     int crossAxisCount;
     switch (screenType) {

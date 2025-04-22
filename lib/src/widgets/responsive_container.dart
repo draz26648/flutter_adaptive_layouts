@@ -68,11 +68,11 @@ class ResponsiveContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     final screenWidth = MediaQuery.of(context).size.width;
     final screenType = ScreenSizeUtils.getScreenSizeType(context);
-    
+
     // Determine width based on screen size
     double widthFraction;
     double? maxWidth;
-    
+
     switch (screenType) {
       case ScreenSizeType.mobile:
         widthFraction = mobileWidthFraction;
@@ -89,13 +89,13 @@ class ResponsiveContainer extends StatelessWidget {
         maxWidth = desktopMaxWidth;
         break;
     }
-    
+
     // Calculate width based on fraction and max width
     double? width = screenWidth * widthFraction;
     if (maxWidth != null && width > maxWidth) {
       width = maxWidth;
     }
-    
+
     return Container(
       width: width,
       height: height,

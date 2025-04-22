@@ -69,10 +69,4 @@ class ScreenSizeUtils {
 }
 
 /// Enum representing different screen size types
-enum ScreenSizeType {
-  mobile,
-  tablet,
-  desktop,
-  largeDesktop,
-  extraLargeDesktop,
-}
+enum ScreenSizeType { mobile, tablet, desktop, largeDesktop, extraLargeDesktop }

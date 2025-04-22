@@ -36,15 +36,10 @@ class MyHomePage extends StatelessWidget {
           padding: EdgeInsets.zero,
           children: [
             const DrawerHeader(
-              decoration: BoxDecoration(
-                color: Colors.deepPurple,
-              ),
+              decoration: BoxDecoration(color: Colors.deepPurple),
               child: Text(
                 'Menu',
-                style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 24,
-                ),
+                style: TextStyle(color: Colors.white, fontSize: 24),
               ),
             ),
             ListTile(
@@ -78,10 +73,7 @@ class MyHomePage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
-          ),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
           BottomNavigationBarItem(
             icon: Icon(Icons.settings),
             label: 'Settings',
@@ -99,14 +91,26 @@ class MyHomePage extends StatelessWidget {
               // Responsive Text Example
               const ResponsiveText(
                 'Welcome to ScreenWise!',
-                mobileStyle: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                tabletStyle: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
-                desktopStyle: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),
+                mobileStyle: TextStyle(
+                  fontSize: 20,
+                  fontWeight: FontWeight.bold,
+                ),
+                tabletStyle: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+                desktopStyle: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
               const SizedBox(height: 24),
-              
+
               // Responsive Container Example
-              const Text('ResponsiveContainer Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text(
+                'ResponsiveContainer Example',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               ResponsiveContainer(
                 mobileWidthFraction: 1.0,
@@ -123,9 +127,12 @@ class MyHomePage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 24),
-              
+
               // Responsive Row Example
-              const Text('ResponsiveRow Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text(
+                'ResponsiveRow Example',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               ResponsiveRow(
                 mobileItemCount: 1,
@@ -140,9 +147,12 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 24),
-              
+
               // Responsive Grid Example
-              const Text('ResponsiveGrid Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text(
+                'ResponsiveGrid Example',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               ResponsiveGrid(
                 mobileColumns: 1,
@@ -162,9 +172,12 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 24),
-              
+
               // Adaptive Column Example
-              const Text('AdaptiveColumn Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text(
+                'AdaptiveColumn Example',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               AdaptiveColumn(
                 spacing: 16,
@@ -175,53 +188,65 @@ class MyHomePage extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 24),
-              
+
               // Responsive Builder Example
-              const Text('ResponsiveBuilder Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text(
+                'ResponsiveBuilder Example',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               ResponsiveBuilder(
-                mobileBuilder: (context) => _buildColoredBox(
-                  Colors.red.shade300, 
-                  'Mobile View',
-                  height: 100,
-                ),
-                tabletBuilder: (context) => _buildColoredBox(
-                  Colors.green.shade300, 
-                  'Tablet View',
-                  height: 100,
-                ),
-                desktopBuilder: (context) => _buildColoredBox(
-                  Colors.blue.shade300, 
-                  'Desktop View',
-                  height: 100,
-                ),
+                mobileBuilder:
+                    (context) => _buildColoredBox(
+                      Colors.red.shade300,
+                      'Mobile View',
+                      height: 100,
+                    ),
+                tabletBuilder:
+                    (context) => _buildColoredBox(
+                      Colors.green.shade300,
+                      'Tablet View',
+                      height: 100,
+                    ),
+                desktopBuilder:
+                    (context) => _buildColoredBox(
+                      Colors.blue.shade300,
+                      'Desktop View',
+                      height: 100,
+                    ),
               ),
               const SizedBox(height: 24),
-              
+
               // Responsive Widget Example
-              const Text('ResponsiveWidget Example', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text(
+                'ResponsiveWidget Example',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               ResponsiveWidget(
                 mobile: _buildColoredBox(
-                  Colors.red.shade700, 
+                  Colors.red.shade700,
                   'Mobile View',
                   height: 100,
                 ),
                 tablet: _buildColoredBox(
-                  Colors.green.shade700, 
+                  Colors.green.shade700,
                   'Tablet View',
                   height: 100,
                 ),
                 desktop: _buildColoredBox(
-                  Colors.blue.shade700, 
+                  Colors.blue.shade700,
                   'Desktop View',
                   height: 100,
                 ),
               ),
               const SizedBox(height: 24),
-              
+
               // Screen Size Info
-              const Text('Current Screen Size Information:', style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold)),
+              const Text(
+                'Current Screen Size Information:',
+                style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              ),
               const SizedBox(height: 8),
               Builder(
                 builder: (context) {
@@ -229,7 +254,7 @@ class MyHomePage extends StatelessWidget {
                   final width = MediaQuery.of(context).size.width;
                   final height = MediaQuery.of(context).size.height;
                   final orientation = ScreenSizeUtils.getOrientation(context);
-                  
+
                   return Container(
                     padding: const EdgeInsets.all(16),
                     decoration: BoxDecoration(
