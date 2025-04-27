@@ -13,3 +13,4 @@ export 'src/widgets/responsive_builder.dart';
 export 'src/widgets/responsive_container.dart';
 export 'src/widgets/responsive_scaffold.dart';
 export 'src/widgets/responsive_text.dart';
+export 'src/widgets/spacing_widgets.dart';

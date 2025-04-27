@@ -12,6 +12,8 @@ A Flutter package providing responsive widgets that automatically adapt to diffe
 - **ResponsiveScaffold**: A scaffold that adapts to screen size, with support for navigation rail on larger screens.
 - **ResponsiveText**: Text that changes its size and style based on screen size.
 - **ResponsiveValue**: A helper class to get different values based on screen size.
+- **VerticalSpace**: A widget that creates vertical space with a specified height.
+- **HorizontalSpace**: A widget that creates horizontal space with a specified width.
 
 ## Getting Started
 
@@ -19,7 +21,7 @@ Add the package to your pubspec.yaml file:
 
 ```yaml
 dependencies:
-  screenwise: ^0.0.3
+  screenwise: ^0.0.5
 ```
 
 Then run:
@@ -174,6 +176,34 @@ final fontSize = context.responsiveDouble(
   tablet: 16.0,
   desktop: 18.0,
 );
+```
+
+### Spacing Widgets
+
+```dart
+// Add vertical space
+VerticalSpace(height: 16.0)
+
+// Add horizontal space
+HorizontalSpace(width: 24.0)
+
+// Example in a Column
+Column(
+  children: [
+    Text('First item'),
+    VerticalSpace(height: 16.0), // Adds 16 logical pixels of vertical space
+    Text('Second item'),
+  ],
+)
+
+// Example in a Row
+Row(
+  children: [
+    Text('First item'),
+    HorizontalSpace(width: 24.0), // Adds 24 logical pixels of horizontal space
+    Text('Second item'),
+  ],
+)
 ```
 
 ## Web-Specific Considerations

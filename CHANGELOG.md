@@ -1,3 +1,8 @@
+## 0.0.5
+
+* Added spacing widgets: `VerticalSpace` and `HorizontalSpace` for easier layout management
+* Improved documentation for spacing widgets
+
 ## 0.0.4
 
 * Minor bug fixes and performance improvements
