@@ -1,3 +1,9 @@
+## 0.0.6
+
+* Added spacing widgets: `VerticalSpace` and `HorizontalSpace` for easier layout management
+* Improved documentation for spacing widgets
+* Followed Dart code style guidelines
+
 ## 0.0.5
 
 * Added spacing widgets: `VerticalSpace` and `HorizontalSpace` for easier layout management
